@@ -59,32 +59,67 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/sign_in_button"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mood_tracker_card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="?attr/colorSurface"
+        app:layout_constraintTop_toBottomOf="@id/user_info_card"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginTop="24dp">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/sign_out_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="로그아웃"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:visibility="gone"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:paddingVertical="14dp"
-        app:cornerRadius="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="?attr/colorPrimary"
-        android:textColor="?attr/colorOnPrimary" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="오늘 기분은 어때요?"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/mood_happy_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@android:drawable/btn_star_big_on"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Happy"/>
+
+                <ImageButton
+                    android:id="@+id/mood_neutral_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@android:drawable/btn_star_big_off"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Neutral"/>
+
+                <ImageButton
+                    android:id="@+id/mood_sad_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@android:drawable/ic_menu_delete"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Sad"/>
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

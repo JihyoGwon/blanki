@@ -70,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
             } else if (itemId == R.id.nav_calendar) {
                 showCalendar();
                 return true; // We handle this manually, so return true
+            } else if (itemId == R.id.nav_my_page) {
+                selectedFragment = new MyPageFragment();
             }
 
             if (selectedFragment != null) {
@@ -102,6 +104,11 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragment_container, fragment);
         fragmentTransaction.commit();
+    }
+
+    public void navigateToHome() {
+        bottomNavigation.setSelectedItemId(R.id.nav_home);
+        loadFragment(new HomeFragment());
     }
 
     // Google Sign-In and Firebase Auth methods remain the same

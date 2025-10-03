@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="eye_styles">
+        <item> o o </item>
+        <item> > &lt; </item>
+        <item> - - </item>
+        <item> T T </item>
+        <item> ^ ^ </item>
+    </string-array>
+
+    <string-array name="mouth_styles">
+        <item> ㅅ </item>
+        <item> o </item>
+        <item> --- </item>
+        <item> v </item>
+        <item> 3 </item>
+    </string-array>
+</resources>
