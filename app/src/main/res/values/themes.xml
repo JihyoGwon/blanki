@@ -1,43 +1,46 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme with Material 3 -->
     <style name="Theme.Blanki" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Material 3 color scheme -->
+        <!-- New Material 3 color scheme -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorPrimaryContainer">@color/primary_light</item>
-        <item name="colorOnPrimaryContainer">@color/primary_dark</item>
-        
-        <item name="colorSecondary">@color/accent</item>
+        <item name="colorOnPrimaryContainer">@color/text_primary</item>
+
+        <!-- Using primary as secondary for a simpler color scheme -->
+        <item name="colorSecondary">@color/primary</item>
         <item name="colorOnSecondary">@color/white</item>
-        <item name="colorSecondaryContainer">@color/accent_light</item>
-        <item name="colorOnSecondaryContainer">@color/accent_dark</item>
-        
-        <item name="colorSurface">@color/light_background</item>
-        <item name="colorOnSurface">@color/light_text</item>
-        <item name="colorSurfaceVariant">@color/surface_variant</item>
-        <item name="colorOnSurfaceVariant">@color/light_icon</item>
-        
+        <item name="colorSecondaryContainer">@color/primary_light</item>
+        <item name="colorOnSecondaryContainer">@color/text_primary</item>
+
+        <!-- Surface colors -->
+        <item name="colorSurface">@color/card_background</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/background</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="android:windowBackground">@color/background</item>
+
         <!-- Status bar -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/primary</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
-        
+        <item name="android:statusBarColor" tools:targetApi="l">@color/background</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+
         <!-- Material 3 shape -->
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Blanki.SmallComponent</item>
         <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Blanki.MediumComponent</item>
         <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Blanki.LargeComponent</item>
     </style>
-    
+
     <!-- Material 3 Shape Appearances -->
     <style name="ShapeAppearance.Blanki.SmallComponent" parent="ShapeAppearance.Material3.SmallComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">8dp</item>
     </style>
-    
+
     <style name="ShapeAppearance.Blanki.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">12dp</item>
     </style>
-    
+
     <style name="ShapeAppearance.Blanki.LargeComponent" parent="ShapeAppearance.Material3.LargeComponent">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">16dp</item>
