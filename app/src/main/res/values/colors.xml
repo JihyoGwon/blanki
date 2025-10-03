@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material 3 color palette inspired by temp files -->
+    <color name="primary">#0a7ea4</color>
+    <color name="primary_light">#E3F2FD</color>
+    <color name="primary_dark">#085a7a</color>
+    <color name="accent">#0a7ea4</color>
+    <color name="accent_light">#E8F5E8</color>
+    <color name="accent_dark">#085a7a</color>
+    
+    <!-- Surface colors -->
+    <color name="surface_variant">#F5F5F5</color>
+    
+    <!-- Light theme colors -->
+    <color name="light_text">#11181C</color>
+    <color name="light_background">#FFFFFF</color>
+    <color name="light_icon">#687076</color>
+    
+    <!-- Dark theme colors -->
+    <color name="dark_text">#ECEDEE</color>
+    <color name="dark_background">#151718</color>
+    <color name="dark_icon">#9BA1A6</color>
+    
+    <!-- Legacy colors for compatibility -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
