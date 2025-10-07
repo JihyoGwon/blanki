@@ -3,6 +3,7 @@ package com.blanki.app;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +22,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import android.widget.ProgressBar;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -28,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
     private SignInButton signInButton;
+    private ProgressBar loadingProgress;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         signInButton = findViewById(R.id.sign_in_button);
+        loadingProgress = findViewById(R.id.loading_progress);
         signInButton.setOnClickListener(v -> signIn());
     }
 
@@ -59,6 +63,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void signIn() {
+        showLoading(true);
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
@@ -74,7 +79,10 @@ public class LoginActivity extends AppCompatActivity {
                 firebaseAuthWithGoogle(account.getIdToken());
             } catch (ApiException e) {
                 Toast.makeText(this, "로그인 실패: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                showLoading(false);
             }
+        } else {
+            showLoading(false);
         }
     }
 
@@ -88,7 +96,18 @@ public class LoginActivity extends AppCompatActivity {
                         finish();
                     } else {
                         Toast.makeText(LoginActivity.this, "인증 실패: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        showLoading(false);
                     }
                 });
+    }
+
+    private void showLoading(boolean isLoading) {
+        if (isLoading) {
+            loadingProgress.setVisibility(View.VISIBLE);
+            signInButton.setEnabled(false);
+        } else {
+            loadingProgress.setVisibility(View.GONE);
+            signInButton.setEnabled(true);
+        }
     }
 }
