@@ -64,6 +64,13 @@ public class MyPageFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        // Reload data when the fragment is resumed to ensure it's up-to-date
+        characterViewModel.loadCharacterData();
+    }
+
     private void signOut() {
         mAuth.signOut();
         mGoogleSignInClient.signOut().addOnCompleteListener(getActivity(), task -> {
