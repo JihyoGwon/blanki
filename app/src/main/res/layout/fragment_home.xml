@@ -7,57 +7,17 @@
     android:padding="24dp">
 
     <TextView
-        android:id="@+id/title_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Blanki"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        android:textColor="?attr/colorOnSurface"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/user_info_card"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintVertical_bias="0.3" />
-
-    <TextView
-        android:id="@+id/subtitle_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Firebase 구글 로그인"
-        android:textSize="16sp"
-        android:textColor="?attr/colorOnSurfaceVariant"
-        app:layout_constraintTop_toBottomOf="@id/title_text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/user_info_card"
+        android:id="@+id/user_info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="8dp"
-        app:cardBackgroundColor="?attr/colorSurface"
-        app:layout_constraintTop_toBottomOf="@id/subtitle_text"
+        android:text="안녕하세요, User님!"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="32dp">
-
-        <TextView
-            android:id="@+id/user_info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="로그인이 필요합니다."
-            android:layout_gravity="center"
-            android:padding="32dp"
-            android:textSize="18sp"
-            android:textColor="?attr/colorOnSurfaceVariant"
-            android:lineSpacingExtra="6dp" />
-
-    </com.google.android.material.card.MaterialCardView>
+        android:layout_marginTop="16dp"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/mood_tracker_card"
@@ -66,10 +26,10 @@
         app:cardCornerRadius="16dp"
         app:cardElevation="8dp"
         app:cardBackgroundColor="?attr/colorSurface"
-        app:layout_constraintTop_toBottomOf="@id/user_info_card"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
